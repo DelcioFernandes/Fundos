@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Fundos</title>
+    <style>
+        body{
+            margin: 1px;
+            background-color: rgb(0, 43, 0);
+        }
+        input{
+            border-radius: 10px;
+            padding: 8px;
+
+        }
+        #numero{
+            color: rgb(27, 255, 6);
+            background-color: transparent;
+            border: 1px solid;
+        }
+        .total{
+            text-align: center;
+            color: rgb(27, 255, 6);
+            border: solid;
+            border-radius: 20px;
+            height: 20px;
+            width: 15%;
+            padding: 40px;   
+        }
+        .trinta{
+            text-align: center;
+            color: blue;
+            margin: 5px;
+            border: solid;
+            border-radius: 20px;
+            height: 50px;
+            width: 50%;
+            padding: 10px; 
+        }
+        .dezp{
+            text-align: center;
+            color: rgb(189, 35, 35);
+            margin: 5px;
+            border: solid;
+            border-radius: 20px;
+            height: 50px;
+            width: 50%;
+            padding: 10px; 
+        }
+        .cinco{
+            text-align: center;
+            color: orange;
+            margin: 5px;
+            border: solid;
+            border-radius: 20px;
+            height: 50px;
+            width: 50%;
+            padding: 10px; 
+        }
+        .gastar{
+            text-align: center;
+            margin: 5px;
+            color: rgb(255, 238, 0);
+            border: solid;
+            border-radius: 20px;
+            height: 50px;
+            width: 50%;
+            padding: 10px;   
+        }
+        h4{
+            color: aliceblue;
+        }
+        .org{
+            display: inline-flex;
+            justify-content: space-between;
+            
+            
+        }
+        #calcula{
+            cursor: pointer;
+            background: transparent;
+            color: rgb(27, 255, 6);
+            border: 1px solid;
+        }
+        #inpp{
+            border: 1px solid rgb(27, 255, 6) ;
+            display: block;
+            justify-content: space-between;
+            border-radius: 10px;
+            padding: 30px;
+
+        }
+    </style>
+</head>
+<body>
+ <div id="inpp">
+    <center>
+    <input type="number" placeholder="Valor Depositado" required id="numero">
+    <input type="button" name="" id="calcula" value="Calcular" onclick="percentagem()">
+    <h4 id="vtotal" style="color: c;">Valor total</h4>
+    <div class="total">: </div>
+</center>
+<center>
+    <div class="org">
+        <h4 id="vtotal" style="color: orange;">50% - Gastos Essencias</h4>
+        <div class="cinco" >: </div>
+        <br>
+        <h4 id="vtotal" style="color: rgb(189, 35, 35);">10% - Gastos Não Essencias</h4>
+        <div class="dezp">: </div>
+    </div> 
+    <div class="org">   
+        <h4 id="vtotal" style="color: blue;">30% de Investimento</h4>
+        <div class="trinta">: </div>
+        <br>
+        <h4 id="vtotal" style="color: rgb(255, 238, 0);"> 10% Gastar/Torrar</h4>
+        <div class="gastar">:</div>
+    </div>  
+    </center>
+   
+    <center>
+    <footer style="font-style: italic;  display: flex; align-content: end; justify-content: space-around; margin-top: 20%;"><a style="text-decoration: none; color: rgb(107, 102, 96);" href="https://www.instagram.com/delcio_m.fernandes/profilecard/?igsh=MXI0cWFyMnFmMGsxYw==">&copy;Délcio Fernandes</a></footer>
+</center> 
+</div>   
+    <script>
+        function percentagem(){
+            var tota = window.document.querySelector('input#numero')
+            var result = document.querySelector('div.total')
+            var percent = Number(tota.value)
+            result.innerHTML = `${percent}Kz`
+
+            perc0 = (percent*50)/100
+            rs0 = document.querySelector('div.cinco')
+            rs0.innerHTML = `${perc0}Kz`
+
+            perc1 = percent*10/100
+            rs1 = document.querySelector('div.dezp')
+            rs1.innerHTML = `${perc1}Kz`
+
+            perc2 = percent*30/100
+            rs2 = document.querySelector('div.trinta')
+            rs2.innerHTML = `${perc2}Kz`
+
+            perc3 = percent*10/100
+            rs3 = document.querySelector('div.gastar')
+            rs3.innerHTML = `${perc3}Kz`
+        }
+    </script>
+    
+</body>
+</html>
